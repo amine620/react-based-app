@@ -5,7 +5,8 @@ import Card from './Card';
 
 export default class Products extends Component {
     state={
-        products:[]
+        products:[],
+      
     }
 
     
@@ -24,8 +25,12 @@ export default class Products extends Component {
 
     render() {
         console.log('render method');
+       
+        
+        
         return (
             <div className='container'>
+              
                 <div className="row">
                 {
                    this.state.products.map((product)=>(
@@ -35,6 +40,8 @@ export default class Products extends Component {
                    )) 
                 }
                 </div>
+
+             
             </div>
         )
     }
