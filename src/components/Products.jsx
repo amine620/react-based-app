@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react'
+import { Link, useParams } from 'react-router-dom';
 import Card from './Card';
 
 
@@ -9,6 +10,10 @@ export default class Products extends Component {
       
     }
 
+    componentWillUnmount()
+    {
+        console.log('unmonted');
+    }
     
     componentDidMount(){
   
@@ -24,13 +29,14 @@ export default class Products extends Component {
     }
 
     render() {
+      
         console.log('render method');
        
         
         
         return (
             <div className='container'>
-              
+
                 <div className="row">
                 {
                    this.state.products.map((product)=>(

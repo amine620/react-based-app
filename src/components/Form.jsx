@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
 
 export default class Form extends Component {
@@ -31,14 +32,33 @@ export default class Form extends Component {
         
 
 
-       const deleteItem=(index)=>{
-           const data=this.state.tasks
+       const deleteItem=(i)=>{
 
-           data.splice(index,1)
 
-            this.setState({
-                tasks:data
+        // method 1
+        //    const data=this.state.tasks
+
+        //    data.splice(index,1)
+
+        //     this.setState({
+        //         tasks:data
+        //     })
+
+
+        // method 2
+
+        //  const data = [22,1,4,2,2,100].filter(function(param,index){
+            //  return param>2
+        //  [22,4,100]
+        // })
+
+        // 
+        this.setState({
+            tasks:this.state.tasks.filter(function(task,index){
+                return index!=i
             })
+        })
+
        }
         return (
             <div className='container'>
